@@ -2,11 +2,11 @@ class AccountServiceFactory
   def self.create(params)
     case params['type']
     when 'deposit'
-      DepositService.new params
+      Events::DepositService.new params
     when 'withdraw'
-      WithdrawService.new params
+      Events::WithdrawService.new params
     when 'transfer'
-      TransferService.new params
+      Events::TransferService.new params
     end
   end
 end
