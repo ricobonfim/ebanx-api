@@ -51,7 +51,7 @@ class AccountsController < ApplicationController
   def reset
     Account.all.delete_all
 
-    render json: 'reset'
+    render status: :ok, json: 'OK'
   end
 
   private
