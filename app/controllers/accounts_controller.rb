@@ -39,8 +39,8 @@ class AccountsController < ApplicationController
   # 404 0
   def event
     account_event = AccountServiceFactory.create(event_params)
-
-    render json: account_event.handle
+    @accounts = account_event.handle
+    render status: :created
   rescue ActiveRecord::RecordNotFound
     render status: 404, json: 0
   end
